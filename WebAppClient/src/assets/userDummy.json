@@ -1,0 +1,26 @@
+[
+   {
+      "name":"Administrador",
+      "role":"Administrador sistema",
+      "status": 1,
+      "userName":"admin",
+      "userId":1,
+      "visible":1
+    },
+    {
+      "name":"Alejandro Espinoza",
+      "role":"Administrador sistema",
+      "status": 1,
+      "userName":"alex",
+      "userId":1,
+      "visible":1
+    },
+    {
+      "name":"Jimena Guzman",
+      "role":"Administrador de proyectos",
+      "status": 1,
+      "userName":"jguzman",
+      "userId":1,
+      "visible":1
+    }
+ ]

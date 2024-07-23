@@ -1,0 +1,74 @@
+<div class="card " style="margin-bottom: 0px;">
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <h1>Students</h1>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-md btn-success rounded-5"><i class="fa-solid fa-circle-plus"></i> Add student</button>
+        </div>
+    </div>
+        
+    <p-table #dt1
+        [value]="lsStudent" 
+        dataKey="name" 
+        [tableStyle]="{ 'min-width': '35rem' }" 
+        [styleClass]="selectedSize.class" 
+        [rows]="10"
+        [paginator]="true" 
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[10, 25, 50]"
+        [globalFilterFields]="['name', 'currentLevel', 'levelProgress']"
+        class="card">
+
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <span class="p-input-icon-left ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" />
+                </span>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 25%;">Name</th>
+                <th style="width: 20%;">Current level</th>
+                <th style="width: 25%;">Progress</th>
+                <th style="width: 20%;">Pending task to review</th>
+                <th style="width: 10%;">Edit</th>
+            </tr>
+        </ng-template>
+        
+        <ng-template pTemplate="body" let-student let-expanded="expanded">
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.currentLevel }}</td>
+                <td>
+                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example" aria-valuenow="student.levelProgress" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar fs-6" 
+                            [ngClass]="{'bg-success' : student.levelProgress >= 80, 'bg-primary' : (student.levelProgress <= 79 && student.levelProgress >= 50), 'bg-warning' : (student.levelProgress <= 49 && student.levelProgress >= 20), 'bg-danger' : student.levelProgress <= 19}" 
+                            [style.width.%]="student.levelProgress">{{student.levelProgress}}%
+                        </div>
+                    </div>
+                    
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-primary rounded-5 position-relative">
+                        Detail
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          99+
+                          <span class="visually-hidden">unread messages</span>
+                        </span>
+                      </button>
+                    <!---
+                    <span *ngIf="student.pendindTask == 0" class="badge rounded-pill text-bg-success">{{ student.pendindTask }}</span>
+                    <span *ngIf="student.pendindTask > 0" class="badge rounded-pill text-bg-warning">{{ student.pendindTask }}</span>
+                    -->
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-primary rounded-5"><i class="fa-solid fa-pen-to-square"></i></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

@@ -1,0 +1,26 @@
+.btn-custom {
+    background-color: #fff; /* Color de fondo normal */
+    border: none; /* Sin bordes */
+    padding: 1px 5px;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    position: relative; /* Para posicionar el texto adicional */
+}
+
+.btn-custom i {
+    font-size: 1rem;
+}
+
+.btn-custom.primary {
+    color: #3B71CA; /* Color de texto normal */
+
+    &:hover {
+        background-color: #3B71CA; /* Color de fondo al pasar el cursor */
+        color: #fff; /* Color de texto al pasar el cursor */
+    }
+}
+
+.content-2 {
+    flex: 1; /* Ocupa todo el espacio disponible */
+}

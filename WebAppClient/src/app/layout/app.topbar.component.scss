@@ -1,0 +1,28 @@
+.i-iconMenu {
+  font-size: 1.5rem; 
+  color: #e4002ad6;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  /* Opcional: Ajusta otros estilos según tus necesidades */
+  width: 100%;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 12px;
+
+  i {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  #userName {
+      display: none;
+  }
+}
+
+
