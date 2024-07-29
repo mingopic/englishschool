@@ -9,7 +9,7 @@
     display: none; /* Ocultar el nombre del menú por defecto */
     position: relative;
     left: 80px; /* Ancho de la barra lateral */
-    background-color: #e4002ad6; /* Color de fondo para el nombre del menú */
+    /* background-color: #e4002ad6; */ /* Color de fondo para el nombre del menú */
     margin-top:15px;
     padding: 12px 7px 12px 7px;
     border-radius: 5px; /* Bordes redondeados */
@@ -21,7 +21,7 @@
 
   .nav-item.active .nav-link {
     //border-left: 3px solid var(--primary-color);; /* Estilo del borde para menú activo */
-    background-color: #e4002ad6; /* Color de fondo para menú activo */
+    /* background-color: #e4002ad6; */ /* Color de fondo para menú activo */
   }
 
   .nav-item.active .nav-link .menu-name {
@@ -54,12 +54,13 @@
 
 .layout-sidebar {
     position: fixed;
-    width: 55px;
+    width: 60px;
+    /* height: calc(100vh); */
     height: calc(100vh);
     z-index: 999;
     overflow-y: auto;
     user-select: none;
-    top: 3.3rem;
+    top: 4.11rem;
     left: 0rem;
     transition: transform $transitionDuration, left $transitionDuration;
     background-color: #e4002ad6;

@@ -53,7 +53,8 @@
                                     <td>{{ lesson.lesson }}</td>
                                     <td>{{ lesson.topic }}</td>
                                     <td>
-                                        <ng-container *ngIf="lesson.type!='quiz'; else quiz">
+                                        <!-- <ng-container *ngIf="lesson.type!='quiz'; else quiz"> -->
+                                        <ng-container *ngIf="lesson.type!=='quiz'; else quiz">
                                             <p-tag *ngIf="lesson.studentbook" icon="pi pi-check-circle" severity="success" value="Studentbook" [rounded]="true"></p-tag>
                                             <p-button *ngIf="!lesson.studentbook" label="Studentbook" icon="pi pi-clock" styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
                                             &nbsp;

@@ -1,6 +1,6 @@
 <div class="layout-topbar">
     <div class="top-header menuNavigation">
-        <button id="df" title="dsf" #menubutton class="p-link layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <button id="df" title="dsf" #menubutton class="p-link layout-topbar-button" style="color: white;" (click)="layoutService.onMenuToggle()">
             <i class="pi pi-bars"></i>
         </button>
     </div>
@@ -8,23 +8,22 @@
     <div class="top-header">
         <a class="header-center" routerLink="">
             <i class="mb-2">
-                <img src="assets/img/logo_blanco.png" alt="Avatar Image" style="width: 90px; height: 30px; font-style: bold;">
+                <img src="assets/img/white-logo.png" alt="Avatar Image" style="width: 40px; height: 40px;">
                 &nbsp;
             </i>
-            <!-- <span>Portal de Proyectos</span> -->
         </a>
     </div>
 
     <div class="top-header menuOptions">
-        
         <div class="btn-group">
             <button type="button" class="btn dropdown-toggle" style="color: white;" (click)="toggleMenu()" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa-solid fa-user-large i-iconMenu">&nbsp;</i><span id="userName"> {{userName}} </span>
+                <i class="fa-solid fa-user-large i-iconMenu icon-user"></i><span id="userName"> {{userName}} </span>
             </button>
-            <div [ngClass]="{'dropdown-menu': true, 'show': isMenuOpen}" aria-labelledby="dropdownMenu2" id="menuBarTop" style="margin-top: 33px; min-width: 30px;">
+            <!-- <div [ngClass]="{'dropdown-menu': true, 'show': isMenuOpen}" aria-labelledby="dropdownMenu2" id="menuBarTop" style="margin-top: 33px; min-width: 30px;"> -->
+            <div [ngClass]="{'dropdown-menu': true, 'show': isMenuOpen}" aria-labelledby="dropdownMenu2" id="menuBarTop" style="margin-top: 33px; margin-left: 12px;">
                 <!-- Contenido del menú -->
                 <button type="button" class="btn" (click)="logOut()">
-                    <i class="fa-solid fa-arrow-right-from-bracket">&nbsp;</i><span>Cerrar Sesión</span>
+                    <i class="fa-solid fa-arrow-right-from-bracket close-user"></i><span>Cerrar Sesión</span>
                 </button>
             </div>
         </div>
