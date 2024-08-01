@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import lombok.Data;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "Tb_User")
 @Data
 public class User {
 
