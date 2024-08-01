@@ -11,9 +11,9 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppMenuComponent implements AfterContentChecked {
 
     menus = [
-        { label: 'My learning', srcIconSvg: 'assets/img/book-open-reader-solid.svg', srcIconSvgActive: 'assets/img/book-open-reader-solid.svg',  icon: '', routerLink: ['/mylearning'], active: false, main: true },
+        { label: 'Users', srcIconSvg: 'assets/img/book-open-reader-solid.svg', srcIconSvgActive: 'assets/img/book-open-reader-solid.svg', icon: '', routerLink: ['/users'], active: false, main: false },
+        { label: 'Learnings', srcIconSvg: 'assets/img/book-open-reader-solid.svg', srcIconSvgActive: 'assets/img/book-open-reader-solid.svg',  icon: '', routerLink: ['/mylearning'], active: false, main: true },
         { label: 'Students', srcIconSvg: 'assets/img/book-open-reader-solid.svg', srcIconSvgActive: 'assets/img/book-open-reader-solid.svg', icon: '', routerLink: ['/students'], active: false, main: false },
-        { label: 'Users', srcIconSvg: 'assets/img/book-open-reader-solid.svg', srcIconSvgActive: 'assets/img/book-open-reader-solid.svg', icon: '', routerLink: ['/users'], active: false, main: false }
         //{ label: 'Timeline', srcIconSvg: 'assets/img/timeline.svg', srcIconSvgActive: 'assets/img/timeline-active.svg', icon: 'fa-solid fa-timeline', routerLink: ['/timeline'], active: false, main: false },
         //{ label: 'Usuarios', srcIconSvg: 'assets/img/users-solid.svg', srcIconSvgActive: 'assets/img/users-solid.svg', routerLink: ['/useradmin'], active: false, main: false }
     ];

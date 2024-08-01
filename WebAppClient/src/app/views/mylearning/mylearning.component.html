@@ -1,12 +1,21 @@
-<div class="card" style="margin-bottom: 0px;">
+<div class="card">
+    <div class="col text-center">
+        <h1>Learnings</h1>
+    </div>
     <div class="row">
         <div class="col-12 md:col-6">
             <label><b>Material: &nbsp;</b></label>
             <p-dropdown [options]="materials" [(ngModel)]="selectedMaterial" optionLabel="name"></p-dropdown>
-        </div>     
+        </div>
     </div>
 
-    <p-table [value]="units" dataKey="name" [tableStyle]="{ 'min-width': '35rem' }" [styleClass]="selectedSize.class" class="card">
+    <p-table 
+    [value]="units" 
+    dataKey="name"
+    [resizableColumns]="true" 
+    [tableStyle]="{ 'min-width': '35rem' }" 
+    [styleClass]="selectedSize.class"
+    class="card">
         <ng-template pTemplate="header">
             <tr>
                 <th style="width: 5rem"></th>
@@ -16,19 +25,22 @@
                 <th style="width: 10rem">Progress</th>
             </tr>
         </ng-template>
-        
+
         <ng-template pTemplate="body" let-unit let-expanded="expanded">
             <tr>
                 <td>
-                    <button type="button" pButton pRipple [pRowToggler]="unit" class="p-button-sm p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                    <button type="button" pButton pRipple [pRowToggler]="unit"
+                        class="p-button-sm p-button-text p-button-rounded p-button-plain"
+                        [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
                 </td>
                 <td><b>{{ unit.name }}</b></td>
                 <td><b>{{ unit.title }}</b></td>
                 <td><b>{{ unit.completedTask }}/{{ unit.totalTask }} </b></td>
                 <td>
-                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example" aria-valuenow="student.progress" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
-                        <div class="progress-bar    " 
-                            [ngClass]="{'bg-success' : unit.progress >= 80, 'bg-primary' : (unit.progress <= 79 && unit.progress >= 50), 'bg-warning' : (unit.progress <= 49 && unit.progress >= 20), 'bg-danger' : unit.progress <= 19}" 
+                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example"
+                        aria-valuenow="student.progress" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
+                        <div class="progress-bar    "
+                            [ngClass]="{'bg-success' : unit.progress >= 80, 'bg-primary' : (unit.progress <= 79 && unit.progress >= 50), 'bg-warning' : (unit.progress <= 49 && unit.progress >= 20), 'bg-danger' : unit.progress <= 19}"
                             [style.width.%]="unit.progress">{{unit.progress}}%
                         </div>
                     </div>
@@ -42,36 +54,42 @@
                     <div class="p-3">
                         <p-table [value]="unit.lessons">
                             <ng-template pTemplate="header">
-                                <tr>
-                                    <th>Lesson</th>
-                                    <th>Topic</th>
-                                    <th>Task</th>
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="body" let-lesson>
-                                <tr>
-                                    <td>{{ lesson.lesson }}</td>
-                                    <td>{{ lesson.topic }}</td>
-                                    <td>
-                                        <!-- <ng-container *ngIf="lesson.type!='quiz'; else quiz"> -->
-                                        <ng-container *ngIf="lesson.type!=='quiz'; else quiz">
-                                            <p-tag  *ngIf="lesson.studentbook" icon="pi pi-check-circle" severity="success" value="Studentbook" [rounded]="true"></p-tag>
-                                            <p-button *ngIf="!lesson.studentbook" label="Studentbook" icon="pi pi-clock" styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
-                                            &nbsp;
-                                            <p-tag *ngIf="lesson.workbook" icon="pi pi-check-circle" severity="success" value="Workbook" [rounded]="true"></p-tag>
-                                            <p-button *ngIf="!lesson.workbook" label="Workbook" icon="pi pi-clock" styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
-                                        </ng-container>
-                                        <ng-template #quiz>
-                                            <p-tag *ngIf="lesson.workbook" icon="pi pi-check-circle" severity="success" value="Quiz" [rounded]="true"></p-tag>
-                                            <p-button *ngIf="!lesson.workbook" label="Quiz" icon="pi pi-clock" styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
-                                        </ng-template>
-                                        <!--<p-tag *ngIf="!lesson.studentbook" icon="pi pi-clock" severity="warning" value="To do" [rounded]="true"></p-tag>
+            <tr>
+                <th>Lesson</th>
+                <th>Topic</th>
+                <th>Task</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-lesson>
+            <tr>
+                <td>{{ lesson.lesson }}</td>
+                <td>{{ lesson.topic }}</td>
+                <td>
+                    <!-- <ng-container *ngIf="lesson.type!='quiz'; else quiz"> -->
+                    <ng-container *ngIf="lesson.type!=='quiz'; else quiz">
+                        <p-tag *ngIf="lesson.studentbook" icon="pi pi-check-circle" severity="success"
+                            value="Studentbook" [rounded]="true"></p-tag>
+                        <p-button *ngIf="!lesson.studentbook" label="Studentbook" icon="pi pi-clock"
+                            styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
+                        &nbsp;
+                        <p-tag *ngIf="lesson.workbook" icon="pi pi-check-circle" severity="success" value="Workbook"
+                            [rounded]="true"></p-tag>
+                        <p-button *ngIf="!lesson.workbook" label="Workbook" icon="pi pi-clock"
+                            styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
+                    </ng-container>
+                    <ng-template #quiz>
+                        <p-tag *ngIf="lesson.workbook" icon="pi pi-check-circle" severity="success" value="Quiz"
+                            [rounded]="true"></p-tag>
+                        <p-button *ngIf="!lesson.workbook" label="Quiz" icon="pi pi-clock"
+                            styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
+                    </ng-template>
+                    <!--<p-tag *ngIf="!lesson.studentbook" icon="pi pi-clock" severity="warning" value="To do" [rounded]="true"></p-tag>
                                         
                                         <i *ngIf="lesson.studentbook" class="pi pi-check-circle icon-success"></i>
                                         <i *ngIf="!lesson.studentbook" class="pi pi-clock icon-warning"></i>
                                         -->
-                                    </td>
-                                    <!--
+                </td>
+                <!--
                                     <td>
                                         <p-tag *ngIf="!lesson.workbook" icon="pi pi-clock" severity="warning" value="To do" [rounded]="true"></p-tag>
                                         
@@ -79,19 +97,19 @@
                                         <i ngIf="!lesson.workbook" class="pi pi-clock icon-warning"></i>
                                         
                                     </td>  
-                                    -->              
-                                 </tr>
-                            </ng-template>
-                            <ng-template pTemplate="emptymessage">
-                                <tr>
-                                    <td colspan="4">There are no lessons yet.</td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
-                    </div>
-                </td>
+                                    -->
             </tr>
         </ng-template>
-
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="4">There are no lessons yet.</td>
+            </tr>
+        </ng-template>
     </p-table>
+</div>
+</td>
+</tr>
+</ng-template>
+
+</p-table>
 </div>

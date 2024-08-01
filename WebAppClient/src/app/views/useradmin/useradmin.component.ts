@@ -16,7 +16,7 @@ export class UseradminComponent implements OnInit {
   userList : any[] = [
     {
        "name":"Administrador",
-       "role":"Administrador sistema",
+       "role":"Administrator",
        "status": true,
        "userName":"admin",
        "userId":1,
@@ -24,18 +24,18 @@ export class UseradminComponent implements OnInit {
      },
      {
        "name":"Alejandro Espinoza",
-       "role":"Administrador sistema",
+       "role":"Teacher",
        "status": true,
        "userName":"alex",
-       "userId":1,
-       "visible":true
+       "userId":2,
+       "visible":false
      },
      {
        "name":"Jimena Guzman",
-       "role":"Administrador de proyectos",
-       "status": true,
+       "role":"Student",
+       "status": false,
        "userName":"jguzman",
-       "userId":1,
+       "userId":3,
        "visible":true
      }
   ];

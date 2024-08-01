@@ -50,16 +50,15 @@
     padding-left: 10px;
   }
 
-  .nav-item.active:hover .menu-name {
+  /* .nav-item.active:hover .menu-name {
     position: fixed;
     margin-left: 18px;
-    display: flex; /* Mostrar el nombre del menú en hover */
-    border-radius: 0px; /* Bordes redondeados en hover */
+    display: flex;
+    border-radius: 0px; 
     font-size: 16px;
-    //font-family: 'Harlow Solid Italic', sans-serif;
     background-color: #e4002ad6;
     padding-right: 20px;
-  }
+  } */
 
 .layout-sidebar {
     position: fixed;

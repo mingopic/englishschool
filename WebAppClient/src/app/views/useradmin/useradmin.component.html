@@ -1,34 +1,37 @@
 <div class="card">
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12">
             <h3><b>Administración de Usuarios</b></h3>
         </div>
-    </div>
+    </div> -->
 
+    <div class="col text-center">
+        <h1>Users</h1>
+    </div>
     <div class="row">
         <div class="col-12" style="padding-top: 0px; text-align-last: right;">
-            <button type="button" style="align-self: flex-start" class="btn btn-outline-success mb-3">
+            <button class="btn btn-md btn-success rounded-5"><i class="fa-solid fa-circle-plus"></i> Add User</button>
+            <!-- <button type="button" style="align-self: flex-start" class="btn btn-outline-success mb-3">
                 <i class="fas fa-user-plus"></i> Agregar Usuario
-            </button>
+            </button> -->
         </div>
     </div>
 
     <p-table 
         [value]="userList"
         rowGroupMode="rowspan"
-        [resizableColumns]="true" 
-        styleClass="p-datatable-gridlines" 
-        [tableStyle]="{'min-width': '50rem'}"
+        [resizableColumns]="true"
+        [tableStyle]="{'min-width': '35rem'}"
         [styleClass]="selectedSize.class"
-        editMode="row">
+        class="card">
         <ng-template pTemplate="header">
             <tr>
-                <th pResizableColumn style="width:25%">Nombre</th>
-                <th pResizableColumn style="width:25%">Usuario</th>
+                <th pResizableColumn style="width:25%">Name</th>
+                <th pResizableColumn style="width:25%">User Name</th>
                 <th pResizableColumn style="width:20%">Rol</th>
-                <th pResizableColumn style="width:10%">Estatus</th>
+                <th pResizableColumn style="width:10%">Status</th>
                 <th pResizableColumn style="width:10%">Visible</th>
-                <th pResizableColumn style="width:10%"></th>
+                <th pResizableColumn style="width:10%">Actions</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-user>
@@ -36,16 +39,34 @@
                     <td>{{ user.name }}</td>
                     <td>{{ user.userName }}</td>
                     <td>{{ user.role }}</td>
-                    <td>
+                  <!--   <td>
                         <p-tag severity="success" value="Activo" [rounded]="true"></p-tag>
-                        <!-- <p-checkbox inputId="showTimeline" [(ngModel)]="user.status" [binary]="true" inputId="binary"></p-checkbox> -->
-                    </td>
+                      
+                    </td> -->
+
                     <td>
-                        <!-- <p-checkbox inputId="showTimeline" [(ngModel)]="user.visible" [binary]="true" inputId="binary"></p-checkbox> -->
+                        <div *ngIf="user.visible; else templateElse1">
+                            <p-tag severity="success" value="Active" [rounded]="true"></p-tag>
+                        </div>
+                        <ng-template #templateElse1>
+                            <p-tag severity="danger" value="Inactive" [rounded]="true"></p-tag>
+                        </ng-template>
+                    </td>
+
+                    <td>
+                    <div *ngIf="user.status; else templateElse2">
+                        <p-tag icon="pi pi-check" severity="primary"  [rounded]="true"></p-tag>
+                    </div>
+                    <ng-template #templateElse2>
+                        <p-tag icon="pi pi-times" severity="danger"  [rounded]="true"></p-tag>
+                    </ng-template>
+                    </td>
+                 <!--    <td>
+                      
                         <p-tag icon="pi pi-check" severity="primary" value="" [rounded]="true"></p-tag>
-                    </td>
+                    </td> -->
                     <td>
-                        <div class="flex align-items-center justify-content-center gap-2">
+                        <div class="flex align-items-center justify-content-start">
                             <button (click)="showDialog()" id="btnEdit" aria-label="btnEdit" type="button" class="btn-custom primary">
                                 <i class="pi pi-pencil" style="font-size: 1rem"></i>
                             </button>
@@ -116,16 +137,7 @@
                     <label class="ml-2" for="showTimeline">Visible</label>
                 </div>
             </div>
-            <!--
-            <div class="col-12 md:col-4">
-                <div class="flex align-items-center justify-content-center gap-2">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <p-checkbox inputId="showTimeline" [binary]="true" inputId="binary"></p-checkbox>
-                        <label class="ml-3" for="showTimeline">Visible</label>
-                    </div>
-                </div>
-            </div>
-            -->
+            
         </div>
         <div class="row mt-2">
             <div class="col-12 md:col-6">
