@@ -26,8 +26,8 @@
                 <td><b>{{ unit.title }}</b></td>
                 <td><b>{{ unit.completedTask }}/{{ unit.totalTask }} </b></td>
                 <td>
-                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example" aria-valuenow="student.progress" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar fs-6" 
+                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example" aria-valuenow="student.progress" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
+                        <div class="progress-bar    " 
                             [ngClass]="{'bg-success' : unit.progress >= 80, 'bg-primary' : (unit.progress <= 79 && unit.progress >= 50), 'bg-warning' : (unit.progress <= 49 && unit.progress >= 20), 'bg-danger' : unit.progress <= 19}" 
                             [style.width.%]="unit.progress">{{unit.progress}}%
                         </div>
@@ -55,7 +55,7 @@
                                     <td>
                                         <!-- <ng-container *ngIf="lesson.type!='quiz'; else quiz"> -->
                                         <ng-container *ngIf="lesson.type!=='quiz'; else quiz">
-                                            <p-tag *ngIf="lesson.studentbook" icon="pi pi-check-circle" severity="success" value="Studentbook" [rounded]="true"></p-tag>
+                                            <p-tag  *ngIf="lesson.studentbook" icon="pi pi-check-circle" severity="success" value="Studentbook" [rounded]="true"></p-tag>
                                             <p-button *ngIf="!lesson.studentbook" label="Studentbook" icon="pi pi-clock" styleClass="p-button-sm p-button-rounded p-button-warning"></p-button>
                                             &nbsp;
                                             <p-tag *ngIf="lesson.workbook" icon="pi pi-check-circle" severity="success" value="Workbook" [rounded]="true"></p-tag>

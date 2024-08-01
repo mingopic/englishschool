@@ -43,10 +43,8 @@ span {
   }
 }
 
-@media only screen and (max-width: 1026px) {
-  #userName {
-      display: none;
+  .drop-close-session {
+   top: 35px;
+   left: 20px;
   }
-}
-
 
