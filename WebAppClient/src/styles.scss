@@ -16,6 +16,14 @@ $gutter: 1rem; //for primeflex grid system
 /* Bootstrap */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+th {
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+}
+
 .icon-success {
     color: #198754;
 }
@@ -40,8 +48,8 @@ $gutter: 1rem; //for primeflex grid system
 }
 
 .btn-danger:hover {
-    background-color: #E4002A;
-    border-color: #E4002A;
+    background-color: #f1133b;
+    border-color: #f1133b;
 }
 
 /*  :host ::ng-deep {
@@ -63,15 +71,8 @@ $gutter: 1rem; //for primeflex grid system
     height: 20px;
  }
 
-th {
-    font-size: 14px;
-}
 
-td {
-    font-size: 14px;
-}
-
-button {
+.btn {
     font-size: 14px;
     font-weight: bold;
 }

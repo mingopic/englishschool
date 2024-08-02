@@ -37,10 +37,12 @@ span {
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 12px; */
+}
 
-  i {
-    font-size: 2rem;
-  }
+.menu-bars-icon {
+  margin: auto auto;
+  width: 24px;
+  height: 24px; 
 }
 
   .drop-close-session {
@@ -49,7 +51,7 @@ span {
   }
 
 
-  @media screen and (max-width: 1024px)  { 
+  @media screen and (max-width: 991px)  { 
     .header-center {
       display: none;
     }

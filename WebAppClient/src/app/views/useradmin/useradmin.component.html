@@ -21,8 +21,19 @@
         </div>
     </div> -->
 
-        <p-table [value]="userList" rowGroupMode="rowspan" [resizableColumns]="true"
+        <p-table #dt1 [value]="userList" rowGroupMode="rowspan" [resizableColumns]="true"
             [tableStyle]="{'min-width': '35rem'}" [styleClass]="selectedSize.class" class="card">
+            
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+                            placeholder="Search keyword" />
+                    </span>
+                </div>
+            </ng-template>
+            
             <ng-template pTemplate="header">
                 <tr>
                     <th pResizableColumn style="width:25%">Name</th>
@@ -200,8 +211,8 @@
  -->
     </ng-template>
     <ng-template pTemplate="footer">
-        <button type="button" (click)="isShowModal1 = false" class="btn btn-danger">Cancelar</button>
-        <button type="button" (click)="isShowModal1 = false" class="btn btn-primary">Guardar</button>
+        <button type="button" (click)="isShowModal1 = false" class="btn btn-danger"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+        <button type="button" (click)="isShowModal1 = false" class="btn btn-primary"><i class="fa-solid fa-check"></i> Guardar</button>
         <!-- <p-button icon="pi pi-times" (click)="isShowModal = false" label="Cancelar" styleClass="p-button-raised p-button-secondary"></p-button>
         <p-button icon="pi pi-save" (click)="isShowModal = false" label="Guardar" styleClass="p-button-raised p-button-info"></p-button> -->
     </ng-template>
@@ -250,8 +261,8 @@
 
     </ng-template>
     <ng-template pTemplate="footer">
-        <button type="button" (click)="isShowModal2 = false" class="btn btn-danger">Cancelar</button>
-        <button type="button" (click)="isShowModal2 = false" class="btn btn-primary">Guardar</button>
+        <button type="button" (click)="isShowModal2 = false" class="btn btn-danger"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+        <button type="button" (click)="isShowModal2 = false" class="btn btn-primary"><i class="fa-solid fa-check"></i> Guardar</button>
         <!-- <p-button icon="pi pi-times" (click)="isShowModal = false" label="Cancelar" styleClass="p-button-raised p-button-secondary"></p-button>
         <p-button icon="pi pi-save" (click)="isShowModal = false" label="Guardar" styleClass="p-button-raised p-button-info"></p-button> -->
     </ng-template>

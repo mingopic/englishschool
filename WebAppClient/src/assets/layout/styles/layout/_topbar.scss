@@ -62,12 +62,15 @@
            /*  background-color: var(--surface-hover); */
         }
 
-        /* &:focus {
+        &:focus {
             @include focused();
-        } */
+        }
 
         i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            padding-left: 0.4rem;
+            padding-right: 0.2rem;
+            margin-right: 8px;
         }
 
         span {

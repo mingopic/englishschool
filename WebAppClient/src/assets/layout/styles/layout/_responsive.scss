@@ -60,14 +60,6 @@
         overflow: hidden;
     }
 
-    .icon-menu {
-        display: inline;
-    }
-
-    .menu-name {
-        display: inline;
-    }
-
     .layout-wrapper {
         .layout-main-container {
             margin-left: 0;
@@ -97,12 +89,12 @@
         &.layout-mobile-active {
             .layout-sidebar {
                 transform: translateX(0);
-                width: 120px;
+                width: 160px;
                 display: flex;
             }
 
             .nav-link {
-                /* padding: 15px 10px; */
+                padding: 15px 10px;
                 text-align: center;
                 color: #ffffff; /* Color del icono */
                 font-size: medium;
