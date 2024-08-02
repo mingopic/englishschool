@@ -1,6 +1,7 @@
 package com.englishSchool.controller;
 
 import com.englishSchool.model.User;
+import com.englishSchool.service.CatalogDetService;
 import com.englishSchool.service.UserService;
 import java.util.ArrayList;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+    
     @GetMapping("/getAll")
     public ArrayList<User> GetAll() {
         return this.userService.GetAll();
