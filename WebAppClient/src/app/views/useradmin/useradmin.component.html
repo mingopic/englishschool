@@ -10,20 +10,18 @@
     </div>
     <div class="row">
         <div class="col-12" style="padding-top: 0px; text-align-last: right;">
-            <button class="btn btn-md btn-success rounded-5"><i class="fa-solid fa-circle-plus"></i> Add User</button>
+            <button type="button" class="btn btn-success" (click)="showDialogCreate()" id="btnEdit"><i
+                    class="fa-solid  fa-user-plus"></i> Add User</button>
+            <!-- <button type="button" class="btn btn-success"><i class="fa-solid fa-pencil"></i> Add User</button> -->
+            <!-- <button class="btn btn-md btn-success rounded-5"><i class="fa-solid fa-circle-plus"></i> Add User</button> -->
             <!-- <button type="button" style="align-self: flex-start" class="btn btn-outline-success mb-3">
                 <i class="fas fa-user-plus"></i> Agregar Usuario
             </button> -->
         </div>
     </div>
 
-    <p-table 
-        [value]="userList"
-        rowGroupMode="rowspan"
-        [resizableColumns]="true"
-        [tableStyle]="{'min-width': '35rem'}"
-        [styleClass]="selectedSize.class"
-        class="card">
+    <p-table [value]="userList" rowGroupMode="rowspan" [resizableColumns]="true" [tableStyle]="{'min-width': '35rem'}"
+        [styleClass]="selectedSize.class" class="card">
         <ng-template pTemplate="header">
             <tr>
                 <th pResizableColumn style="width:25%">Name</th>
@@ -36,55 +34,91 @@
         </ng-template>
         <ng-template pTemplate="body" let-user>
             <tr>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.userName }}</td>
-                    <td>{{ user.role }}</td>
-                  <!--   <td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.userName }}</td>
+                <td>{{ user.role }}</td>
+                <!--   <td>
                         <p-tag severity="success" value="Activo" [rounded]="true"></p-tag>
                       
                     </td> -->
 
-                    <td>
-                        <div *ngIf="user.visible; else templateElse1">
-                            <p-tag severity="success" value="Active" [rounded]="true"></p-tag>
-                        </div>
-                        <ng-template #templateElse1>
-                            <p-tag severity="danger" value="Inactive" [rounded]="true"></p-tag>
-                        </ng-template>
-                    </td>
+                <td>
+                    <div *ngIf="user.visible; else templateElse1">
+                        <p-tag severity="success" value="Active" [rounded]="true"></p-tag>
+                    </div>
+                    <ng-template #templateElse1>
+                        <p-tag severity="danger" value="Inactive" [rounded]="true"></p-tag>
+                    </ng-template>
+                </td>
 
-                    <td>
+                <td>
                     <div *ngIf="user.status; else templateElse2">
-                        <p-tag icon="pi pi-check" severity="primary"  [rounded]="true"></p-tag>
+                        <p-tag icon="pi pi-check" severity="primary" [rounded]="true">
+
+                        </p-tag>
                     </div>
                     <ng-template #templateElse2>
-                        <p-tag icon="pi pi-times" severity="danger"  [rounded]="true"></p-tag>
+                        <p-tag icon="pi pi-times" severity="danger" [rounded]="true"></p-tag>
                     </ng-template>
-                    </td>
-                 <!--    <td>
+                </td>
+                <!--    <td>
                       
                         <p-tag icon="pi pi-check" severity="primary" value="" [rounded]="true"></p-tag>
                     </td> -->
-                    <td>
-                        <div class="flex align-items-center justify-content-start">
-                            <button (click)="showDialog()" id="btnEdit" aria-label="btnEdit" type="button" class="btn-custom primary">
-                                <i class="pi pi-pencil" style="font-size: 1rem"></i>
-                            </button>
-                        </div>
-                    </td>
+                <td>
+                    <div class="flex align-items-center justify-content-start">
+                        <button type="button" aria-label="btnEdit" (click)="showDialogEdit()" class="btn btn-primary"><i
+                                class="fa-solid fa-pencil"></i> Edit</button>
+                        <!-- <button type="button" (click)="showDialog()" id="btnEdit" aria-label="btnEdit" class="btn btn-outline-secondary">Edit</button> -->
+                        <!-- <button (click)="showDialog()" id="btnEdit" aria-label="btnEdit" type="button" class="btn-custom primary">
+                                <i class="pi pi-pencil btn-edit"></i>
+                            </button> -->
+                    </div>
+                </td>
             </tr>
         </ng-template>
     </p-table>
 </div>
 
-<p-dialog [(visible)]="isShowModal" [position]="postionModal" [modal]="true" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw', height:'38vw' }" [draggable]="false" [resizable]="true" [maximizable]="true">
+<!-- <p-dialog [(visible)]="isShowModal" [position]="postionModal" [modal]="true" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw', height:'38vw' }" [draggable]="false" [resizable]="true" [maximizable]="true"> -->
+<p-dialog [(visible)]="isShowModal1" [position]="postionModal" [modal]="true" [breakpoints]="{ '960px': '75vw' }"
+    class="create-modal" [draggable]="false">
     <ng-template pTemplate="header">
-        <i class="fas fa-user-edit ml-2" style="font-size: 1.5rem; color: #3B71CA;"></i>
-        <Label class="text-xl font-bold content-2 ml-2">Editar Usuario</Label>
+        <!--  <i class="fas fa-user-edit ml-2" style="font-size: 1.5rem; color: #3B71CA;"></i> -->
+        <Label class="text-xl font-bold content-2 ml-2">Create User</Label>
     </ng-template>
     <ng-template pTemplate="body">
+        <div class="row">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="Name">
+            </div>
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="">
+            </div>
+            <div class="mb-3">
+                <label for="passowrd1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password1">
+            </div>
+            <div class="mb-4">
+                <label for="passowrd2" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="password2">
+            </div>
+            <select class="form-select mb-6" aria-label="Default select example">
+                <option selected>Select Role</option>
+                <option value="1">Administrator</option>
+                <option value="2">Teacher</option>
+                <option value="3">Student</option>
+            </select>
+        </div>
+        <!-- <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Active </label>
+        </div> -->
 
-        <div class="row mt-1">
+
+        <!-- <div class="row mt-1">
             <div class="col-12">
                 <div class="p-inputgroup">
                     <span class="p-float-label">
@@ -95,8 +129,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mt-2">
+ -->
+        <!--  <div class="row mt-2">
             <div class="col-12">
                 <div class="p-inputgroup">
                     <span class="p-float-label">
@@ -107,8 +141,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mt-2">
+ -->
+        <!-- <div class="row mt-2">
             <div class="col-12">
                 <div class="p-inputgroup">
                     <span class="p-float-label">
@@ -119,8 +153,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mt-2">
+ -->
+        <!--  <div class="row mt-2">
             <div class="col-12 md:col-4">
                 <span class="p-float-label">
                     <p-dropdown [options]="roleList"  placeholder="Seleccione un rol de usuario" optionLabel="roleName" inputId="float-label" appendTo="body"></p-dropdown>
@@ -138,8 +172,8 @@
                 </div>
             </div>
             
-        </div>
-        <div class="row mt-2">
+        </div> -->
+        <!--  <div class="row mt-2">
             <div class="col-12 md:col-6">
                 <span class="p-float-label">
                     <p-multiSelect [options]="projectList" 
@@ -161,10 +195,62 @@
                 
             </div>
         </div>
+ -->
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button type="button" (click)="isShowModal1 = false" class="btn btn-success">Cancelar</button>
+        <button type="button" (click)="isShowModal1 = false" class="btn btn-danger">Guardar</button>
+        <!-- <p-button icon="pi pi-times" (click)="isShowModal = false" label="Cancelar" styleClass="p-button-raised p-button-secondary"></p-button>
+        <p-button icon="pi pi-save" (click)="isShowModal = false" label="Guardar" styleClass="p-button-raised p-button-info"></p-button> -->
+    </ng-template>
+</p-dialog>
+
+
+
+
+
+<!-- <p-dialog [(visible)]="isShowModal" [position]="postionModal" [modal]="true" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw', height:'38vw' }" [draggable]="false" [resizable]="true" [maximizable]="true"> -->
+<p-dialog [(visible)]="isShowModal2" [position]="postionModal" [modal]="true" [breakpoints]="{ '960px': '75vw' }"
+    class="create-modal" [draggable]="false">
+    <ng-template pTemplate="header">
+        <!--  <i class="fas fa-user-edit ml-2" style="font-size: 1.5rem; color: #3B71CA;"></i> -->
+        <Label class="text-xl font-bold content-2 ml-2">Edit User</Label>
+    </ng-template>
+    <ng-template pTemplate="body">
+        <div class="row">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" class="form-control" value="Alejandro Espinoza" id="Name">
+            </div>
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="text" class="form-control" value="alex" id="Username">
+            </div>
+            <div class="mb-3">
+                <label for="passowrd1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password1" value="123456789">
+            </div>
+            <select class="form-select mb-6" aria-label="Default select example">
+                <!-- <option selected>Select Role</option> -->
+                <option value="1">Administrator</option>
+                <option selected  value="2">Teacher</option>
+                <option value="3">Student</option>
+            </select>
+        </div>
+        
+        <div class="form-check" checked>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+            Active
+            </label>
+        </div>
+
 
     </ng-template>
     <ng-template pTemplate="footer">
-        <p-button icon="pi pi-times" (click)="isShowModal = false" label="Cancelar" styleClass="p-button-raised p-button-secondary"></p-button>
-        <p-button icon="pi pi-save" (click)="isShowModal = false" label="Guardar" styleClass="p-button-raised p-button-info"></p-button>
+        <button type="button" (click)="isShowModal2 = false" class="btn btn-success">Cancelar</button>
+        <button type="button" (click)="isShowModal2 = false" class="btn btn-danger">Guardar</button>
+        <!-- <p-button icon="pi pi-times" (click)="isShowModal = false" label="Cancelar" styleClass="p-button-raised p-button-secondary"></p-button>
+        <p-button icon="pi pi-save" (click)="isShowModal = false" label="Guardar" styleClass="p-button-raised p-button-info"></p-button> -->
     </ng-template>
 </p-dialog>

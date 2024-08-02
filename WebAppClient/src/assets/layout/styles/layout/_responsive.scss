@@ -60,6 +60,14 @@
         overflow: hidden;
     }
 
+    .icon-menu {
+        display: inline;
+    }
+
+    .menu-name {
+        display: inline;
+    }
+
     .layout-wrapper {
         .layout-main-container {
             margin-left: 0;
@@ -89,7 +97,7 @@
         &.layout-mobile-active {
             .layout-sidebar {
                 transform: translateX(0);
-                width: 160px;
+                width: 120px;
                 display: flex;
             }
 

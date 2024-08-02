@@ -15,7 +15,7 @@ export class UseradminComponent implements OnInit {
   
   userList : any[] = [
     {
-       "name":"Administrador",
+       "name":"Administrator",
        "role":"Administrator",
        "status": true,
        "userName":"admin",
@@ -56,7 +56,8 @@ export class UseradminComponent implements OnInit {
   ];
 
   selectedSize = {name: 'large', class: 'p-datatable-sm'};
-  isShowModal : Boolean = false;
+  isShowModal1 : Boolean = false;
+  isShowModal2 : Boolean = false;
   postionModal: string = "center";
 
   constructor(
@@ -95,8 +96,12 @@ export class UseradminComponent implements OnInit {
     //console.log(dropDownProject);
   }
   
-  showDialog() {
-    this.isShowModal = true;
+  showDialogCreate() {
+    this.isShowModal1 = true;
+  }
+
+  showDialogEdit() {
+    this.isShowModal2 = true;
   }
 
   showToastMessage(messageType:string, message:string) {
