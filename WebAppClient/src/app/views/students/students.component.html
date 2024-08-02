@@ -1,12 +1,13 @@
 <div class="card " style="margin-bottom: 0px;">
-    <div class="row align-items-center">
+   <!--  <div class="row align-items-center"> -->
+        
         <div class="col text-center">
             <h1>Students</h1>
         </div>
-        <div class="col-auto">
+        <!-- <div class="col-auto">
             <button class="btn btn-md btn-success rounded-5"><i class="fa-solid fa-circle-plus"></i> Add student</button>
         </div>
-    </div>
+    </div> -->
         
     <p-table #dt1
         [value]="lsStudent" 
@@ -44,7 +45,7 @@
                 <td>{{ student.name }}</td>
                 <td>{{ student.currentLevel }}</td>
                 <td>
-                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example" aria-valuenow="student.levelProgress" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress ms-1 me-4" role="progressbar" aria-label="Success example" aria-valuenow="student.levelProgress" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
                         <div class="progress-bar fs-6" 
                             [ngClass]="{'bg-success' : student.levelProgress >= 80, 'bg-primary' : (student.levelProgress <= 79 && student.levelProgress >= 50), 'bg-warning' : (student.levelProgress <= 49 && student.levelProgress >= 20), 'bg-danger' : student.levelProgress <= 19}" 
                             [style.width.%]="student.levelProgress">{{student.levelProgress}}%
@@ -66,7 +67,7 @@
                     -->
                 </td>
                 <td>
-                    <button class="btn btn-sm btn-primary rounded-5"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="btn btn-sm btn-primary rounded-5"><i class="fa-solid fa-pen-to-square btn-icon"></i></button>
                 </td>
             </tr>
         </ng-template>

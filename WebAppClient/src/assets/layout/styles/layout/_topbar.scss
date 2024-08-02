@@ -29,7 +29,7 @@
     .layout-topbar-logo {
         display: flex;
         align-items: center;
-        color: #ffffff;
+        /* color: #ffffff; */
         font-size: 1.5rem;
         font-weight: 500;
         width: max-content;
@@ -50,20 +50,21 @@
         align-items: center;
         position: relative;
         color: var(--text-color-secondary);
-        border-radius: 50%;
+        /* border-radius: 50%; */
         width: 3rem;
         height: 3rem;
+        margin-left: 8px;
         cursor: pointer;
         transition: background-color $transitionDuration;
 
         &:hover {
             color: var(--text-color);
-            background-color: var(--surface-hover);
+           /*  background-color: var(--surface-hover); */
         }
 
-        &:focus {
+        /* &:focus {
             @include focused();
-        }
+        } */
 
         i {
             font-size: 1.5rem;
