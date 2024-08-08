@@ -49,6 +49,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { UseradminComponent } from './views/useradmin/useradmin.component';
 import { MylearningComponent } from './views/mylearning/mylearning.component';
 import { StudentsComponent } from './views/students/students.component';
+import { catalogDetService } from './shared/catalogDet.service';
 registerLocaleData(localEs,'es')
 
 @NgModule({
@@ -100,6 +101,7 @@ registerLocaleData(localEs,'es')
             provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
         },
         { provide: LocationStrategy, useClass: HashLocationStrategy },
+        catalogDetService
     ],
     bootstrap: [AppComponent]
 })

@@ -16,6 +16,7 @@
         [tableStyle]="{ 'min-width': '35rem' }" 
         [styleClass]="selectedSize.class"
         class="card">
+        
         <ng-template pTemplate="header">
             <tr>
                 <th style="width: 5rem"></th>
@@ -39,7 +40,7 @@
                 <td>
                     <div class="progress ms-1 me-4" role="progressbar" aria-label="Animated striped example"
                         aria-valuenow="student.progress" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
-                        <div class="progress-bar bg-main progress-bar-striped progress-bar-animated" [style.width.%]="unit.progress">{{unit.progress}}%
+                        <div class="progress-bar fs-6 bg-main progress-bar-striped progress-bar-animated" [style.width.%]="unit.progress">{{unit.progress}}%
                         </div>
                     </div>
                 </td>
@@ -67,7 +68,7 @@
                     <ng-container *ngIf="lesson.type!=='quiz'; else quiz">
 
                         <ng-container *ngIf="lesson.studentbook">
-                            <button type="button" class="btn btn-primary rounded-pill p-1 pl-2 pr-2 position-relative" style="color: white; font-size: 13px; font-weight: 700;">
+                            <button type="button" class="btn btn-primary rounded-pill p-1 pl-2 pr-2 position-relative fb-13">
                                 Studentbook <i class="fa-regular fa-circle-check position-absolute top-0 start-99 translate-middle bg-success rounded-circle"></i>
                             </button>
                             &nbsp;
@@ -81,7 +82,7 @@
                         </ng-container>
 
                         <ng-container *ngIf="lesson.workbook">
-                            <button type="button" class="btn btn-primary rounded-pill p-1 pl-2 pr-2 position-relative" style="color: white; font-size: 13px; font-weight: 700;">
+                            <button type="button" class="btn btn-primary rounded-pill p-1 pl-2 pr-2 position-relative fb-13">
                                 Workbook <i class="fa-regular fa-circle-check position-absolute top-0 start-99 translate-middle bg-success rounded-circle"></i>
                             </button>
                             &nbsp;
