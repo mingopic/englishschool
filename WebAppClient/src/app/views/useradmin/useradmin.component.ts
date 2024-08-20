@@ -56,9 +56,8 @@ export class UseradminComponent implements OnInit {
   ];
 
   selectedSize = {name: 'large', class: 'p-datatable-sm'};
-  isShowModal1 : Boolean = false;
-  isShowModal2 : Boolean = false;
-  postionModal: string = "center";
+  isShowModal1 : boolean = false;
+  isShowModal2 : boolean = false;
 
   constructor(
     private messageService: MessageService, 

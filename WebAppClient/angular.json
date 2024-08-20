@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sakai-ng:build:production"
+              "buildTarget": "sakai-ng:build:production"
             },
             "development": {
-              "browserTarget": "sakai-ng:build:development"
+              "buildTarget": "sakai-ng:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sakai-ng:build"
+            "buildTarget": "sakai-ng:build"
           }
         },
         "test": {
@@ -120,7 +120,6 @@
       }
     }
   },
-  "defaultProject": "sakai-ng",
   "cli": {
     "analytics": false,
     "schematicCollections": [

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 
 import { ChartModule } from 'primeng/chart';
 import { TimelineModule } from 'primeng/timeline';
@@ -52,12 +52,10 @@ import { StudentsComponent } from './views/students/students.component';
 import { catalogDetService } from './shared/catalogDet.service';
 registerLocaleData(localEs,'es')
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent, LoginComponent, UseradminComponent, MylearningComponent, StudentsComponent
     ],
-    imports: [
-        BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
@@ -80,7 +78,6 @@ registerLocaleData(localEs,'es')
         DialogModule,
         AutoCompleteModule,
         FileUploadModule,
-        HttpClientModule,
         InputSwitchModule,
         ConfirmPopupModule,
         MultiSelectModule,
@@ -88,21 +85,18 @@ registerLocaleData(localEs,'es')
         MessagesModule,
         NgxSpinnerModule,
         TranslateModule.forRoot({
-        loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient]
-        }
-        })
-    ],
-    providers: [
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })], providers: [
         { provide: LOCALE_ID, useValue: 'es' },
         {
             provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
         },
         { provide: LocationStrategy, useClass: HashLocationStrategy },
-        catalogDetService
-    ],
-    bootstrap: [AppComponent]
-})
+        catalogDetService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
