@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../../assets/blue-font.jpg) no-repeat center top;
+    //background: linear-gradient(rgba(156, 14, 64, 0.2), rgba(156, 14, 64, 0.2)), url(../../../assets/img/fondo_login.png) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+}
+
+label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+b {
+    font-size: 14px;
+}
+
+.form-body  {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.login-box {
+    border-radius: 15px;
+    height: 480px;
+    width: 370px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.img-avatar {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 40px;
+   margin-top: -40px;
+}
+  
+.login-box .avatar {
+    width: 200px;
+    height: 70px;
+}
+  
+
+.login-box input {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+}
+
+.login-box button {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+  
+.btn-custom-color {
+    background-color: #E4002B;
+    color: #fff;
+}
+
+.btn-custom-color:active {
+    background-color: #e4002ad6;
+    color: #fff;
+}
+
+.btn-custom-color:hover {
+    background-color: #e4002a7a;
+    color: #fff;
+}
+
+:host ::ng-deep .p-message {
+    margin: 0.5rem;
+}
+
+:host ::ng-deep .p-message .p-message-wrapper {
+    padding: 0.5rem 0.5rem;
+}
+
+@media (min-width: 992px) {
+    .login-box {
+        width: 400px;
+    }
+}

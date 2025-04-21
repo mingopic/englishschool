@@ -1,0 +1,8 @@
+USE englishschool;
+
+ALTER TABLE tb_person AUTO_INCREMENT = 1;
+ALTER TABLE tb_user AUTO_INCREMENT = 1;
+
+INSERT INTO tb_person VALUES (NULL,'Administrador',1,1,NOW(),NOW());
+
+INSERT INTO tb_user VALUES (NULL,'admin','$2a$10$SLR2sPM9M7086EH81ApbQemKJxCeRb3iOrPb0XN8Pvon1AX9MUDF.',1,1,NOW(),NOW());

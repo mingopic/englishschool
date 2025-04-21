@@ -1,0 +1,200 @@
+.nav-link {
+    padding: 25px 10px;
+    /* padding-bottom: 16px; */
+    text-align: center;
+    color: #ffffff; /* Color del icono */
+    font-size: large;
+  }
+
+  .nav-link .menu-name {
+    display: none; /* Ocultar el nombre del menú por defecto */
+    position: relative;
+    left: 80px; /* Ancho de la barra lateral */
+    /* background-color: #e4002ad6; */ 
+    /* Color de fondo para el nombre del menú */
+    margin-top: 15px;
+    padding: 12px 7px 12px 7px;
+    border-radius: 5px; /* Bordes redondeados */
+    transform: translate(-40%, -110%);
+    /* z-index: 1;  *//* Colocar el nombre del menú sobre el icono */
+    color: #ffffff;/* Color del texto */
+    font-weight: bold;
+    //font-family: 'Harlow Solid Italic', sans-serif;
+  }
+
+/* 
+  .nav-item a {
+    width: 45px;
+    height: 45px;
+  }
+   */
+
+/*   .nav-item.active .nav-link { */
+    //border-left: 3px solid var(--primary-color);; /* Estilo del borde para menú activo */
+    /* background-color: #e4002ad6; */ /* Color de fondo para menú activo */
+  /* } */
+
+  .nav-item.active .nav-link .menu-name {
+    /* background-color: #e4002ad6; */ /* Color de fondo para nombre de menú activo */
+    color: #ffffff; /* Color del texto para nombre de menú activo */
+  }
+
+  .nav-link:hover .menu-name {
+    position: fixed;
+    /* margin-left: 10px; */
+    display: flex; /* Mostrar el nombre del menú en hover */
+    border-radius: 0px; /* Bordes redondeados en hover */
+    font-size: medium;
+    //font-family: 'Harlow Solid Italic', sans-serif;
+    background-color: #e4002ad6;
+    padding-right: 20px;
+    padding-left: 10px;
+  }
+
+  /* .nav-item.active:hover .menu-name {
+    position: fixed;
+    margin-left: 18px;
+    display: flex;
+    border-radius: 0px; 
+    font-size: 16px;
+    background-color: #e4002ad6;
+    padding-right: 20px;
+  } */
+
+.layout-sidebar {
+    position: fixed;
+    width: 60px;
+    /* height: calc(100vh); */
+    height: calc(100vh);
+    z-index: 999;
+    overflow-y: auto;
+    user-select: none;
+    top: 4.2rem;
+    /* left: 0rem; */
+    transition: transform $transitionDuration, left $transitionDuration;
+    background-color: #e4002a;
+    border-radius: 0px;
+    padding: 0 0.4rem;
+    /* padding: 0.5rem 0.2rem; */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .02), 0px 0px 2px rgba(0, 0, 0, .05), 0px 1px 4px rgba(0, 0, 0, .08);
+}
+
+.layout-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .layout-root-menuitem {
+        >.layout-menuitem-root-text {
+            font-size: .857rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--surface-900);
+            margin: .75rem 0;
+        }
+
+        >a {
+            display: none;
+        }
+    }
+
+    a {
+        user-select: none;
+
+        &.active-menuitem {
+            >.layout-submenu-toggler {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    li.active-menuitem {
+        >a {
+            .layout-submenu-toggler {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        a {
+            display: flex;
+            align-items: center;
+            position: relative;
+            outline: 0 none;
+            color:  #ffffff;
+            cursor: pointer;
+            /* padding: .75rem 1rem; */
+            border-radius: $borderRadius;
+            transition: background-color $transitionDuration, box-shadow $transitionDuration;
+
+            /* .layout-menuitem-icon {
+                margin-right: .5rem;
+            } */
+
+            .layout-submenu-toggler {
+                font-size: 75%;
+                margin-left: auto;
+                transition: transform $transitionDuration;
+            }
+
+            &.active-route {
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+
+            &:hover {
+                background-color: #d47295;
+            }
+
+            &:focus {
+                @include focused-inset();
+            }
+        }
+
+        ul {
+            overflow: hidden;
+            border-radius: $borderRadius;
+
+            li {
+                a {
+                    margin-left: 1rem;
+                }
+
+                li {
+                    a {
+                        margin-left: 2rem;
+                    }
+
+                    li {
+                        a {
+                            margin-left: 2.5rem;
+                        }
+
+                        li {
+                            a {
+                                margin-left: 3rem;
+                            }
+
+                            li {
+                                a {
+                                    margin-left: 3.5rem;
+                                }
+
+                                li {
+                                    a {
+                                        margin-left: 4rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

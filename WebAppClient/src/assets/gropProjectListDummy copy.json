@@ -1,0 +1,420 @@
+[
+    {
+       "name":"Construcción",
+       "actual":"45%",
+       "desviacion":"5%",
+       "projectList":[
+          {
+             "proyecto":"Mezanine",
+             "avance":"40%",
+             "fechaInicio":"15 ene 2023",
+             "fechaFin":"17 ene 2023",
+             "asignado":"Luis Lopez",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         40,
+                         60
+                      ],
+                      "backgroundColor":[
+                         "#4cd07d",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#76db9b",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#4cd07d",
+                         "#4cd07d"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Plataforma primer piso",
+             "avance":"20%",
+             "fechaInicio":"15 ene 2023",
+             "fechaFin":"15 ene 2023",
+             "asignado":"José Ramon",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         20,
+                         80
+                      ],
+                      "backgroundColor":[
+                         "#eec137",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#f2d066",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#eec137",
+                         "#eec137"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Acceso principal de estacionamiento",
+             "avance":"20%",
+             "fechaInicio":"16 ene 2023",
+             "fechaFin":"16 ene 2023",
+             "asignado":"Luis Lopez",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         20,
+                         80
+                      ],
+                      "backgroundColor":[
+                         "#4cd07d",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#76db9b",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#4cd07d",
+                         "#4cd07d"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Construcción 4",
+             "avance":"10%",
+             "fechaInicio":"17 ene 2023",
+             "fechaFin":"17 ene 2023",
+             "asignado":"Luis Lopez",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         10,
+                         90
+                      ],
+                      "backgroundColor":[
+                         "#eec137",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#f2d066",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#eec137",
+                         "#eec137"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Construcción 5",
+             "avance":"70%",
+             "fechaInicio":"10 ene 2023",
+             "fechaFin":"14 ene 2023",
+             "asignado":"José Ramon",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         70,
+                         30
+                      ],
+                      "backgroundColor":[
+                         "#eec137",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#f2d066",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#eec137",
+                         "#eec137"
+                      ]
+                   }
+                ]
+             }
+          }
+       ],
+       "doughnut":{
+          "labels":[
+             "Actual",
+             "Desviación",
+             "Pendiente"
+          ],
+          "datasets":[
+             {
+                "data":[
+                   45,
+                   5,
+                   50
+                ],
+                "backgroundColor":[
+                   "#eec137",
+                   "#9E9E9E",
+                   "#E0E0E0"
+                ],
+                "hoverBackgroundColor":[
+                   "#f2d066",
+                   "#BDBDBD",
+                   "#EEEEEE"
+                ]
+             }
+          ]
+       }
+    },
+    {
+       "name":"Trámites",
+       "actual":"15%",
+       "desviacion":"25%",
+       "projectList":[
+          {
+             "proyecto":"Permisos de construcción",
+             "avance":"40%",
+             "fechaInicio":"15 ene 2023",
+             "fechaFin":"17 ene 2023",
+             "asignado":"",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         40,
+                         60
+                      ],
+                      "backgroundColor":[
+                         "#eec137",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#f2d066",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#eec137",
+                         "#eec137"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Aprobación de planos",
+             "avance":"20%",
+             "fechaInicio":"15 ene 2023",
+             "fechaFin":"15 ene 2023",
+             "asignado":"José Ramon",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         20,
+                         80
+                      ],
+                      "backgroundColor":[
+                         "#ff3d32",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#ff6259",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#ff3d32",
+                         "#ff3d32"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Protección civil",
+             "avance":"20%",
+             "fechaInicio":"16 ene 2023",
+             "fechaFin":"16 ene 2023",
+             "asignado":"Luis Lopez",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         20,
+                         80
+                      ],
+                      "backgroundColor":[
+                         "#eec137",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#f2d066",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#eec137",
+                         "#eec137"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Trámites 4",
+             "avance":"10%",
+             "fechaInicio":"17 ene 2023",
+             "fechaFin":"17 ene 2023",
+             "asignado":"Luis Lopez",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         10,
+                         90
+                      ],
+                      "backgroundColor":[
+                         "#eec137",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#f2d066",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#eec137",
+                         "#eec137"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Trámites 5",
+             "avance":"30%",
+             "fechaInicio":"10 ene 2023",
+             "fechaFin":"14 ene 2023",
+             "asignado":"José Ramon",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         30,
+                         70
+                      ],
+                      "backgroundColor":[
+                         "#ff3d32",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#ff6259",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#ff3d32",
+                         "#ff3d32"
+                      ]
+                   }
+                ]
+             }
+          },
+          {
+             "proyecto":"Trámites 6",
+             "avance":"10%",
+             "fechaInicio":"17 ene 2023",
+             "fechaFin":"17 ene 2023",
+             "asignado":"Luis Lopez",
+             "pieData":{
+                "labels":[
+                   "Avance"
+                ],
+                "datasets":[
+                   {
+                      "data":[
+                         10,
+                         90
+                      ],
+                      "backgroundColor":[
+                         "#ff3d32",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "hoverBackgroundColor":[
+                         "#ff6259",
+                         "rgba(0, 0, 0, 0)"
+                      ],
+                      "borderColor":[
+                         "#ff3d32",
+                         "#ff3d32"
+                      ]
+                   }
+                ]
+             }
+          }
+       ],
+       "doughnut":{
+          "labels":[
+             "Actual",
+             "Desviación",
+             "Pendiente"
+          ],
+          "datasets":[
+             {
+                "data":[
+                   15,
+                   25,
+                   60
+                ],
+                "backgroundColor":[
+                   "#ff3d32",
+                   "#9E9E9E",
+                   "#E0E0E0"
+                ],
+                "hoverBackgroundColor":[
+                   "#ff6259",
+                   "#BDBDBD",
+                   "#EEEEEE"
+                ]
+             }
+          ]
+       }
+    }
+ ]

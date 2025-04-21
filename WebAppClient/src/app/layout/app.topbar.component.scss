@@ -1,0 +1,59 @@
+span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.i-iconMenu {
+  font-size: 1.5rem;
+  color: #ffffff;
+/* color: #e4002ad6; */
+}
+
+.icon-user {
+  padding-right: 8px;
+}
+
+.close-user {
+  padding-right: 8px;
+}
+
+.title-user {
+  font-weight: bold;
+}
+
+.layout-topbar{
+  height: 50px;
+}
+
+
+.header-center {
+  display: flex;
+  justify-content: center; 
+  /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  /* Opcional: Ajusta otros estilos según tus necesidades */
+ /*  width: 100%;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 12px; */
+}
+
+.menu-bars-icon {
+  margin: auto auto;
+  width: 24px;
+  height: 24px; 
+}
+
+  .drop-close-session {
+   top: 35px;
+   left: 20px;
+  }
+
+
+  @media screen and (max-width: 991px)  { 
+    .header-center {
+      display: none;
+    }
+  
+  }

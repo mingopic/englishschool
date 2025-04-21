@@ -1,0 +1,105 @@
+/* th {
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+}
+
+button {
+    font-size: 14px;
+    font-weight: bold;
+}
+ */
+
+.btn {
+    border-radius: 20px;
+}
+
+/* .create-modal {
+    width: 40vw;
+    height: 38vw;
+}
+ */
+
+ .btn-custom {
+    background-color: #fff; 
+    /* Color de fondo normal */
+    border: none; 
+    /* Sin bordes */
+    /* padding: 1px 5px;
+    cursor: pointer;  */
+    /* Cambia el cursor al pasar por encima */
+    /* border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;  */
+    /* Transiciones suaves */
+    /* position: relative;  */
+    /* Para posicionar el texto adicional */
+ }
+
+
+ .btn-custom.primary {
+    color: #3B71CA;  
+    /* Color de texto normal */
+
+     &:hover {
+        /* background-color: #3B71CA;   */
+        /* Color de fondo al pasar el cursor */
+        color: #000;  
+        /* Color de texto al pasar el cursor */
+     }
+    }
+
+
+ :host ::ng-deep {
+    .p-button.p-button-sm {
+        font-size: 12px;
+        padding: 6px 0px;
+      }}
+
+ :host ::ng-deep {
+    .p-tag-icon,
+    .p-tag-value {
+        font-size: 12px;
+        padding: 4px 4px;
+        margin: auto auto;
+      }
+    }
+    
+ 
+
+/* .btn-custom {
+    background-color: #fff; */ 
+    /* Color de fondo normal */
+    /* border: none;  */
+    /* Sin bordes */
+    /* padding: 1px 5px;
+    cursor: pointer;  */
+    /* Cambia el cursor al pasar por encima */
+    /* border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;  */
+    /* Transiciones suaves */
+    /* position: relative;  */
+    /* Para posicionar el texto adicional */
+/* }
+
+.btn-custom i {
+    font-size: 1rem;
+}
+
+.btn-custom.primary {
+    color: #3B71CA;  */
+    /* Color de texto normal */
+
+    /* &:hover {
+        background-color: #3B71CA;  */
+        /* Color de fondo al pasar el cursor */
+        /* color: #fff;  */
+        /* Color de texto al pasar el cursor */
+/*     }
+}
+
+.content-2 {
+    flex: 1;  */
+    /* Ocupa todo el espacio disponible */
+/*  } */

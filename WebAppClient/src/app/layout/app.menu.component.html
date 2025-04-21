@@ -1,0 +1,38 @@
+<!-- <nav class="navbar" style="margin-left: 4px;">
+    <ul class="navbar-nav"> -->
+        <!-- Elementos de menú con iconos y nombres -->
+<!--         <li class="nav-item" *ngFor="let menu of menus;" [ngClass]="{'active': menu.active}">
+        <a class="nav-link" [routerLink]="menu.routerLink">
+            <div class="menu-items">
+                <div class="icon-menu">
+                    <i>
+                        <img *ngIf="!menu.active" src="{{menu.srcIconSvg}}" alt="Icono SVG" style="width: 25px; height: 25px; font-style: bold;">
+                        <img *ngIf="menu.active" src="{{menu.srcIconSvgActive}}" alt="Icono SVG" style="width: 25px; height: 25px; font-style: bold;">
+                    </i>
+                </div>
+                <div class="title-menu">
+                    <span class="menu-name">{{menu.label}}</span>
+                </div>
+            </div>
+        </a>
+        </li>
+    </ul>
+</nav> -->
+
+
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <!-- Elementos de menú con iconos y nombres -->
+        <li class="nav-item" *ngFor="let menu of menus;" [ngClass]="{'active': menu.active}">
+            <a class="nav-link" [routerLink]="menu.routerLink">
+                <i style="font-size: 1.5rem">
+                    <img *ngIf="!menu.active" src="{{menu.srcIconSvg}}" alt="Icono SVG"
+                        style="width: 25px; height: 25px; font-style: bold;">
+                    <img *ngIf="menu.active" src="{{menu.srcIconSvgActive}}" alt="Icono SVG"
+                        style="width: 25px; height: 25px; font-style: bold;">
+                </i>
+                <span class="menu-name">{{menu.label}}</span>
+            </a>
+        </li>
+    </ul>
+</nav>
