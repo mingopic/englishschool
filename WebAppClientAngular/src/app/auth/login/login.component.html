@@ -1,0 +1,36 @@
+<body>
+  <div class="form-body">
+    <div class="login-box">
+      <div class="img-avatar">
+        <img src="assets/img/logo_blanco.png" class="avatar" alt="Avatar Image">
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="submitFormLogin()" class="mx-auto">
+        <!-- <h2 class="text-center">Login</h2> -->
+        <div class="mb-3 mt-6">
+          <label for="username" class="form-label">Usuario</label>
+          <input formControlName="username" pInputText type="text" class="form-control mt-2"
+            [class.is-invalid]="f.username.errors && f.username.touched" placeholder="Ingrese Usuario" id="username" />
+          <div id="validationUserName" class="invalid-feedback">
+            <b>Es necesario escribir el usuario</b>
+          </div>
+        </div>
+        <div class="mb-6 mt-6">
+          <label for="exampleInputPassword1" class="form-label ">Contraseña</label>
+          <input formControlName="password" type="password" class="form-control mt-2"
+            [class.is-invalid]="f.password.errors && f.password.touched" placeholder="Ingrese Contraseña"
+            id="exampleInputPassword1">
+          <div id="validatioPassword" class="invalid-feedback">
+            <b>Es necesario escribir la contraseña</b>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-custom-color mt-3">Ingresar</button>
+        <div class="field p-fluid">
+          <p-messages></p-messages>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+  <p style="color: white"> Cargando... </p>
+</ngx-spinner>

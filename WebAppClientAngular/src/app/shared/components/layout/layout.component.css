@@ -1,0 +1,88 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+mat-nav-list {
+  i {
+    vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+  }
+
+  @media (min-width: 601px) {
+    span {
+      display: inline-block; /* Asegura que se comporta bien con las animaciones de tamaño */
+      max-width: 150px; /* Ancho máximo cuando es visible */
+      opacity: 1; /* Completamente visible */
+      transition: max-width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      white-space: nowrap; /* Evita que el texto se desborde en múltiples líneas */
+      overflow: hidden; /* Oculta el texto que se desborda cuando se reduce el ancho */
+      vertical-align: middle; /* Alinea verticalmente con el icono */
+    }
+
+    .menuItemHide {
+      max-width: 0; /* Reduce el ancho a 0 cuando está oculto */
+      opacity: 0; /* Hacer el texto transparente */
+    }
+  }
+}
+
+mat-sidenav {
+  width: auto;
+  background: linear-gradient(var(--color-primary-gradient));
+}
+
+mat-toolbar {
+  height: 48px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+a label {
+  color: white !important;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrar verticalmente */
+}
+
+.drop-close-session {
+  top: 35px;
+  left: 10px;
+ }
+
+ .close-user {
+  padding-right: 8px;
+}
+
+.layout-main {
+  flex: 1 1 auto;
+}

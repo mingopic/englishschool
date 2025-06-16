@@ -1,0 +1,52 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar>
+
+    <a class="header-center" routerLink="">
+      <i class="mb-2 mt-2">
+        <img src="../../../../assets/img/white-logo.png" alt="Avatar Image" style="width: 40px; height: 40px;">
+      </i>
+    </a>
+
+    <button class="btn btn-lg rounded-circle" #menubutton style="color: white;" (click)="toggleMenu()">
+      <i class="fa-solid fa-bars menu-bars-icon"></i>
+    </button>
+     <!--
+    <button class="btn btn-warning" (click)="onThemeSwitchChange()">Cambiar tema</button>
+    -->
+    <span class="example-spacer">
+    </span>
+
+    <div class="btn-group">
+      <button type="button" class="btn dropdown-toggle" style="color: white;" (click)="toggleMenuSession()" id="dropdownMenu2"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-solid fa-user-large i-iconMenu icon-user"></i><span id="userName"> {{userName}} </span>
+      </button>
+      <!-- <div [ngClass]="{'dropdown-menu': true, 'show': isMenuOpen}" aria-labelledby="dropdownMenu2" id="menuBarTop" style="margin-top: 33px; min-width: 30px;"> -->
+      <div [ngClass]="{'dropdown-menu': true, 'show': isMenuOpen}" aria-labelledby="dropdownMenu2" id="menuBarTop"
+      class="drop-close-menu" class="drop-close-session">
+        <!-- Contenido del menú -->
+        <button type="button" class="btn" (click)="logOut()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i><span> Cerrar Sesión</span>
+        </button>
+      </div>
+
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav opened [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches">
+      <mat-nav-list>
+        <a mat-list-item href="/admin/users"><label><i class="fas fa-users"></i><span [ngClass]="!showSpanMenu ? 'menuItemHide' : ''">&nbsp;Users</span></label></a>
+        <a mat-list-item href="/student/mylearning"><label><i class="fa-solid fa-chalkboard-user"></i><span [ngClass]="!showSpanMenu ? 'menuItemHide' : ''">&nbsp;My Learning</span></label></a>
+        <a mat-list-item href="/admin/students"><label><i class="fa-solid fa-book-open-reader"></i><span [ngClass]="!showSpanMenu ? 'menuItemHide' : ''">&nbsp;Students</span></label></a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="layout-main">
+          <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,138 @@
+<div class="row mt-3">
+  <div class="col-lg-12" align="left">
+      <h1 class="text-main fw-bold" align="center">
+          My learning
+      </h1>
+      <label class="ms-3"><b>Book: &nbsp;</b></label>
+      <p-select [options]="materials" [(ngModel)]="selectedMaterial" optionLabel="name" placeholder="Select a Book" class="w-full md:w-56" />
+  </div>
+</div>
+
+<div class="card row m-3 shadow">
+  <p-table
+      [value]="units"
+      dataKey="name"
+      [resizableColumns]="true"
+      [tableStyle]="{ 'min-width': '35rem' }"
+      [styleClass]="selectedSize.class"
+      class="card">
+
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width: 5rem"></th>
+              <th style="width: 5rem">Unit</th>
+              <th style="width: 10rem">Title</th>
+              <th style="width: 10rem">Completed tasks</th>
+              <th style="width: 10rem">Progress</th>
+          </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-unit let-expanded="expanded">
+          <tr>
+              <td>
+                  <button type="button" pButton pRipple [pRowToggler]="unit"
+                      class="p-button-sm p-button-text p-button-rounded p-button-plain"
+                      [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+              </td>
+              <td><b>{{ unit.name }}</b></td>
+              <td><b>{{ unit.title }}</b></td>
+              <td><b>{{ unit.completedTask }}/{{ unit.totalTask }} </b></td>
+              <td>
+                  <div class="progress ms-1 me-4" role="progressbar" aria-label="Animated striped example"
+                      aria-valuenow="student.progress" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
+                      <div class="progress-bar fs-6 bg-main progress-bar-striped progress-bar-animated" [style.width.%]="unit.progress">{{unit.progress}}%
+                      </div>
+                  </div>
+              </td>
+          </tr>
+      </ng-template>
+
+      <ng-template pTemplate="rowexpansion" let-unit>
+          <tr>
+              <td colspan="5">
+                  <div class="p-3">
+                      <p-table [value]="unit.lessons">
+                          <ng-template pTemplate="header">
+          <tr>
+              <th>Lesson</th>
+              <th>Topic</th>
+              <th>Task</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-lesson>
+          <tr>
+              <td>{{ lesson.lesson }}</td>
+              <td>{{ lesson.topic }}</td>
+              <td>
+                  <!-- <ng-container *ngIf="lesson.type!='quiz'; else quiz"> -->
+                  <ng-container *ngIf="lesson.type!=='quiz'; else quiz">
+
+                      <ng-container *ngIf="lesson.studentbook">
+                          <button type="button" class="btn btn-primary rounded-pill p-1 pl-2 pr-2 position-relative fb-13">
+                              Studentbook <i class="fa-regular fa-circle-check position-absolute top-0 start-99 translate-middle bg-success rounded-circle"></i>
+                          </button>
+                          &nbsp;
+                      </ng-container>
+
+                      <ng-container *ngIf="!lesson.studentbook">
+                          <button type="button" class="btn btn-warning rounded-pill p-1 pl-2 pr-2 position-relative" style="font-size: 13px; font-weight: 700;">
+                              Studentbook <i class="fa-regular fa-clock position-absolute top-0 start-99 translate-middle bg-warning rounded-circle"></i>
+                          </button>
+                          &nbsp;
+                      </ng-container>
+
+                      <ng-container *ngIf="lesson.workbook">
+                          <button type="button" class="btn btn-primary rounded-pill p-1 pl-2 pr-2 position-relative fb-13">
+                              Workbook <i class="fa-regular fa-circle-check position-absolute top-0 start-99 translate-middle bg-success rounded-circle"></i>
+                          </button>
+                          &nbsp;
+                      </ng-container>
+
+                      <ng-container *ngIf="!lesson.workbook">
+                          <button type="button" class="btn btn-warning rounded-pill p-1 pl-2 pr-2 position-relative" style="font-size: 13px; font-weight: 700;">
+                              Workbook <i class="fa-regular fa-clock position-absolute top-0 start-99 translate-middle bg-warning rounded-circle"></i>
+                          </button>
+                          &nbsp;
+                      </ng-container>
+
+                  </ng-container>
+
+                  <ng-template #quiz>
+
+                      <ng-container *ngIf="!lesson.workbook">
+                          <button type="button" class="btn btn-warning rounded-pill p-1 pl-2 pr-2 position-relative" style="font-size: 13px; font-weight: 700;">
+                              Quiz <i class="fa-regular fa-clock position-absolute top-0 start-99 translate-middle bg-warning rounded-circle"></i>
+                          </button>
+                          &nbsp;
+                      </ng-container>
+                  </ng-template>
+                  <!--<p-tag *ngIf="!lesson.studentbook" icon="pi pi-clock" severity="warning" value="To do" [rounded]="true"></p-tag>
+
+                                      <i *ngIf="lesson.studentbook" class="pi pi-check-circle icon-success"></i>
+                                      <i *ngIf="!lesson.studentbook" class="pi pi-clock icon-warning"></i>
+                                      -->
+              </td>
+              <!--
+                                  <td>
+                                      <p-tag *ngIf="!lesson.workbook" icon="pi pi-clock" severity="warning" value="To do" [rounded]="true"></p-tag>
+
+                                      <i *ngIf="lesson.workbook" class="pi pi-check-circle icon-success"></i>
+                                      <i ngIf="!lesson.workbook" class="pi pi-clock icon-warning"></i>
+
+                                  </td>
+                                  -->
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+          <tr>
+              <td colspan="4">There are no lessons yet.</td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
+</td>
+</tr>
+</ng-template>
+
+</p-table>
+</div>

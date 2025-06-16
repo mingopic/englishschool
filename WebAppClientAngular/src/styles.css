@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import './styles/themes/dark.scss';*/
+@import './styles/themes/light.scss';
+@import "primeicons/primeicons.css";
+
+html, body { height: 100%; font-size: 12px;}
+
+body {
+  background-color: var(--main-content-background-color);
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bg-main {
+  background-color: var(--color-primary);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white)
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-white)
+}
+
+th {
+  font-size: 12px;
+}
+
+td {
+  font-size: 12px;
+}
+
+.icon-success {
+  color: #198754;
+}
+
+.icon-warning {
+  color: #ffca2c;
+}
+
+.btn-primary {
+  background-color: #012169 !important;
+  border-color: #012169 !important;
+}
+
+.btn-primary:hover {
+  background-color: #0234a8 !important;
+  border-color: #0234a8 !important;
+}
+
+.btn-danger {
+  background-color: #E4002A;
+  border-color: #E4002A;
+}
+
+.btn-danger:hover {
+  background-color: #f1133b;
+  border-color: #f1133b;
+}
+
+.fb-13 {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/*  :host ::ng-deep {
+  .p-element. {
+      color: #0234a8;
+    }}
+*/
+.text-main {
+   color: #012169;
+}
+
+.text-second {
+  color: #E4002A;
+}
+
+.icon-table {
+  /* font-size: 14px; */
+  width: 20px;
+  height: 20px;
+}
+
+
+.btn {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bg-main {
+  background-color: #012169 !important;
+}
+
+.bg-second {
+  background-color: #E4002A;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+}
